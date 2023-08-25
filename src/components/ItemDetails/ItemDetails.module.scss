@@ -1,0 +1,81 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid gray;
+    width: 250px;
+    max-height: 400px;
+    position: sticky;
+    top: 50px;
+    background-color: white;
+}
+.image{
+    width: 150px;
+    height: 150px;
+}
+.table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 230px;
+    padding: 0px 5px;
+    padding-bottom: 15px;
+    
+}
+.statField{
+    display: flex;
+    justify-content: space-between;
+}
+
+.statName{
+    text-align: center;
+    width: 170px;
+    border: 1px solid gray;
+}
+
+.baseNumber{
+    text-align: center;
+    border: 1px solid gray;
+    width: 40px;
+}
+
+.typeContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.typeField{
+    text-align: center;
+}
+.typeNames{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+@media screen and (max-width: 720px) {
+    .container{
+        width: 100%;
+        border: none;
+        top: 0;
+
+        &::after{
+            content: "";
+            width: 100%;
+            height: 1px;
+            background-color: black;
+            position: absolute;
+            bottom: 0;
+            left: -10px;
+            width: calc(100% + 20px);
+        }
+    }
+    
+}
+@media screen and (max-width: 550px) {
+    .container{
+      top: 0px;
+    }
+    
+}
+

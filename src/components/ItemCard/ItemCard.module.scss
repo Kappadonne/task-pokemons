@@ -1,0 +1,29 @@
+.itemCard{
+    width: 200px;
+    min-height: 250px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border: 2px solid gray;
+    cursor: pointer;
+}
+.abilitysList{
+    text-align: center;
+}
+.abilitys{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.images{
+    align-items: center;
+    margin-top: 10px;
+}
+.abilityColor{
+    padding: 5px 5px;
+    background-color: lightblue;
+    border-radius: 5px;
+}
