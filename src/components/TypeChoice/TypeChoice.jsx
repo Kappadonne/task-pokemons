@@ -4,16 +4,21 @@ import { addTypesInfo } from "../../store/TypesSlice";
 import classes from "./TypeChoice.module.scss";
 
 const TypeChoice = (props) => {
-  const [choosenTypes, setChoosenTypes] = useState([]);
+  const [chosenTypes, setChosenTypes] = useState([]);
   const dispatch = useDispatch();
+
   const handleRadioChange = (event) => {
     const radioValue = event.target.value;
-    setChoosenTypes(radioValue);
+    if (chosenTypes.includes(radioValue)) {
+      setChosenTypes(chosenTypes.filter((type) => type !== radioValue));
+    } else {
+      setChosenTypes([...chosenTypes, radioValue]);
+    }
   };
 
   useEffect(() => {
-    dispatch(addTypesInfo([choosenTypes]));
-  }, [choosenTypes]);
+    dispatch(addTypesInfo(chosenTypes));
+  }, [chosenTypes]);
 
   return (
     <div>
@@ -26,7 +31,7 @@ const TypeChoice = (props) => {
               name="type"
               value={type}
               onChange={handleRadioChange}
-              checked={choosenTypes === type}
+              checked={chosenTypes.includes(type)} //
             />
             <label htmlFor={type}>{type}</label>
           </li>
